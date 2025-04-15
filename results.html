@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | PrefabHome</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PrefabHome Estimator</h1>
+            <p>Your customized cost estimate</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="estimator.html">Cost Estimator</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>Your Prefabricated Home Estimate</h2>
+        
+        <div class="results-summary">
+            <div class="summary-card">
+                <h3>Project Summary</h3>
+                <ul id="projectSummary">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="summary-card total-card">
+                <h3>Total Estimated Cost</h3>
+                <p class="total-amount" id="finalTotalCost">$0</p>
+                <p class="savings-note">Estimated savings vs traditional construction: <span id="savingsAmount">$0</span></p>
+            </div>
+        </div>
+
+        <div class="detailed-results">
+            <div class="cost-breakdown">
+                <h3>Detailed Cost Breakdown</h3>
+                <table id="costBreakdownTable">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Cost</th>
+                            <th>% of Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="visualization">
+                <div class="chart-container">
+                    <canvas id="resultsChart"></canvas>
+                </div>
+                <div class="comparison-container">
+                    <h4>Prefab vs Traditional Construction</h4>
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="printEstimate" class="cta-button secondary">Print Estimate</button>
+            <button id="newEstimate" class="cta-button">Start New Estimate</button>
+            <button id="contactUs" class="cta-button secondary">Contact Our Team</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PrefabHome Estimator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

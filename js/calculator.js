@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const locationFactorElement = document.getElementById('locationFactor');
     const totalCostElement = document.getElementById('totalCost');
     
-    // Cost parameters
+    // Cost parameters in Indian Rupees
     const costParams = {
-        modular: 150,
-        panelized: 130,
-        precut: 110,
+        modular: 12500,       // ₹12,500 per sqft
+        panelized: 10800,     // ₹10,800 per sqft
+        precut: 9000,         // ₹9,000 per sqft
         materialGrade: {
             economy: 0.9,
             standard: 1.0,
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
             luxury: 1.5
         },
         features: {
-            garage: 15000,
-            deck: 8000,
-            fireplace: 5000,
-            solar: 10000
+            garage: 1250000,   // ₹12.5 lakhs
+            deck: 650000,      // ₹6.5 lakhs
+            fireplace: 400000, // ₹4 lakhs
+            solar: 850000      // ₹8.5 lakhs
         }
     };
     
@@ -78,11 +78,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate total cost
         const totalCost = (baseCost + featuresCost) * locationFactor;
         
+        // Format numbers in Indian Rupees with lakhs/crores
+        function formatINR(amount) {
+            if (amount >= 10000000) {
+                return '₹' + (amount / 10000000).toFixed(2) + ' crores';
+            } else if (amount >= 100000) {
+                return '₹' + (amount / 100000).toFixed(2) + ' lakhs';
+            } else {
+                return '₹' + amount.toLocaleString('en-IN');
+            }
+        }
+        
         // Update UI
-        baseCostElement.textContent = `$${baseCost.toLocaleString()}`;
-        featuresCostElement.textContent = `$${featuresCost.toLocaleString()}`;
+        baseCostElement.textContent = formatINR(baseCost);
+        featuresCostElement.textContent = formatINR(featuresCost);
         locationFactorElement.textContent = `${((locationFactor - 1) * 100).toFixed(0)}%`;
-        totalCostElement.textContent = `$${totalCost.toLocaleString()}`;
+        totalCostElement.textContent = formatINR(totalCost);
         
         // Update chart
         updateChart(baseCost, featuresCost, locationFactor);

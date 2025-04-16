@@ -10,7 +10,7 @@
     <header>
         <div class="container">
             <h1>PrefabHome Estimator</h1>
-            <p>Your customized cost estimate</p>
+            <p>Your customized cost estimate (Indian Standards)</p>
         </div>
     </header>
 
@@ -19,15 +19,13 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="estimator.html">Cost Estimator</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Contact</a></li>
+                
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <h2>Your Prefabricated Home Estimate</h2>
+        <h2>Your Prefabricated Home Estimate (₹)</h2>
         
         <div class="results-summary">
             <div class="summary-card">
@@ -39,14 +37,14 @@
             
             <div class="summary-card total-card">
                 <h3>Total Estimated Cost</h3>
-                <p class="total-amount" id="finalTotalCost">$0</p>
-                <p class="savings-note">Estimated savings vs traditional construction: <span id="savingsAmount">$0</span></p>
+                <p class="total-amount" id="finalTotalCost">₹0</p>
+                <p class="savings-note">Estimated savings vs traditional construction: <span id="savingsAmount">₹0</span> (Approx. 15-25%)</p>
             </div>
         </div>
 
         <div class="detailed-results">
             <div class="cost-breakdown">
-                <h3>Detailed Cost Breakdown</h3>
+                <h3>Detailed Cost Breakdown (₹)</h3>
                 <table id="costBreakdownTable">
                     <thead>
                         <tr>
@@ -63,10 +61,11 @@
 
             <div class="visualization">
                 <div class="chart-container">
+                    <h4>Cost Distribution</h4>
                     <canvas id="resultsChart"></canvas>
                 </div>
                 <div class="comparison-container">
-                    <h4>Prefab vs Traditional Construction</h4>
+                    <h4>Prefab vs RCC Construction</h4>
                     <canvas id="comparisonChart"></canvas>
                 </div>
             </div>
@@ -75,13 +74,17 @@
         <div class="action-buttons">
             <button id="printEstimate" class="cta-button secondary">Print Estimate</button>
             <button id="newEstimate" class="cta-button">Start New Estimate</button>
-            <button id="contactUs" class="cta-button secondary">Contact Our Team</button>
+        </div>
+
+        <div class="disclaimer">
+            <p><strong>Note:</strong> All costs are estimates in Indian Rupees. Actual costs may vary based on location, material availability, and design changes. Prices include GST.</p>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 PrefabHome Estimator. All rights reserved.</p>
+            <p>&copy; 2025 PrefabHome Estimator. All rights reserved.</p>
+            <p class="footer-note">Costs calculated as per Indian construction standards and material rates</p>
         </div>
     </footer>
 
